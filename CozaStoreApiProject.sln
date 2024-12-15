@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CozaStore.EntityLayer", "CozaStore.EntityLayer\CozaStore.EntityLayer.csproj", "{25E98186-3DC8-42F7-A492-1DAEFA7F180B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CozaStore.DataAccessLayer", "CozaStore.DataAccessLayer\CozaStore.DataAccessLayer.csproj", "{284CC598-F900-435B-B6B2-BB1B8A295B7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CozaStore.BusinessLayer", "CozaStore.BusinessLayer\CozaStore.BusinessLayer.csproj", "{E7F22224-CB6E-490D-A5A1-8324E6D9C120}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CozaStore.DtoLayer", "CozaStore.DtoLayer\CozaStore.DtoLayer.csproj", "{6072C8CE-1D28-4D19-9F79-965A66C7F2FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CozaStore.WebApi", "CozaStore.WebApi\CozaStore.WebApi.csproj", "{63AF4998-4E59-4FDA-A332-E22624FBFD40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CozaStore.WebUI", "CozaStore.WebUI\CozaStore.WebUI.csproj", "{33AE7388-5DF6-4810-8AE9-310CEF229C6D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{25E98186-3DC8-42F7-A492-1DAEFA7F180B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25E98186-3DC8-42F7-A492-1DAEFA7F180B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25E98186-3DC8-42F7-A492-1DAEFA7F180B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25E98186-3DC8-42F7-A492-1DAEFA7F180B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{284CC598-F900-435B-B6B2-BB1B8A295B7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{284CC598-F900-435B-B6B2-BB1B8A295B7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{284CC598-F900-435B-B6B2-BB1B8A295B7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{284CC598-F900-435B-B6B2-BB1B8A295B7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7F22224-CB6E-490D-A5A1-8324E6D9C120}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7F22224-CB6E-490D-A5A1-8324E6D9C120}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7F22224-CB6E-490D-A5A1-8324E6D9C120}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7F22224-CB6E-490D-A5A1-8324E6D9C120}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6072C8CE-1D28-4D19-9F79-965A66C7F2FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6072C8CE-1D28-4D19-9F79-965A66C7F2FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6072C8CE-1D28-4D19-9F79-965A66C7F2FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6072C8CE-1D28-4D19-9F79-965A66C7F2FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63AF4998-4E59-4FDA-A332-E22624FBFD40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63AF4998-4E59-4FDA-A332-E22624FBFD40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63AF4998-4E59-4FDA-A332-E22624FBFD40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63AF4998-4E59-4FDA-A332-E22624FBFD40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33AE7388-5DF6-4810-8AE9-310CEF229C6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33AE7388-5DF6-4810-8AE9-310CEF229C6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33AE7388-5DF6-4810-8AE9-310CEF229C6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33AE7388-5DF6-4810-8AE9-310CEF229C6D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

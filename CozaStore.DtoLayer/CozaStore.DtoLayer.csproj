@@ -7,11 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="FeatureDtos\" />
-    <Folder Include="ProductDtos\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CozaStore.EntityLayer\CozaStore.EntityLayer.csproj" />
   </ItemGroup>
 

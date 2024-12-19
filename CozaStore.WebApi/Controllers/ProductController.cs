@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CozaStore.BusinessLayer.Abstract;
+using CozaStore.DtoLayer.ProductDtos;
+using CozaStore.EntityLayer.Concrete;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CozaStore.WebApi.Controllers
@@ -7,5 +10,59 @@ namespace CozaStore.WebApi.Controllers
 	[ApiController]
 	public class ProductController : ControllerBase
 	{
+		private readonly IProductService _productService;
+
+		public ProductController(IProductService productService)
+		{
+			_productService = productService;
+		}
+
+		[HttpGet]
+		public IActionResult ProductList()
+		{
+			var values = _productService.TGetAll();
+			return Ok(values);
+		}
+
+		[HttpGet("GetProduct")]
+		public IActionResult GetProduct(int id)
+		{
+			var value = _productService.TGetById(id);
+			return Ok(value);
+		}
+
+		[HttpPost]
+		public IActionResult CreateProduct(CreateProductDto createProductDto)
+		{
+			Product product = new Product();
+			product.ProductName = createProductDto.ProductName;
+			product.Price = createProductDto.Price;
+			product.Detail = createProductDto.Detail;
+			product.ImageUrl = createProductDto.ImageUrl;
+			product.CategoryId = createProductDto.CategoryId;
+			_productService.TInsert(product);
+			return Ok("Ekleme başarılı");
+		}
+
+		[HttpPut]
+		public IActionResult UpdateProduct(UpdateProductDto updateProductDto)
+		{
+			Product product = new Product();
+			product.ProductId = updateProductDto.ProductId;
+			product.ProductName = updateProductDto.ProductName;
+			product.Price = updateProductDto.Price;
+			product.Detail = updateProductDto.Detail;
+			product.ImageUrl = updateProductDto.ImageUrl;
+			product.CategoryId = updateProductDto.CategoryId;
+			_productService.TUpdate(product);
+			return Ok("Güncelleme Başarılı");
+		}
+
+		[HttpDelete]
+		public IActionResult DeleteCategory(int id)
+		{
+			_productService.TDelete(id);
+			return Ok("Silme Başarılı");
+		}
 	}
 }

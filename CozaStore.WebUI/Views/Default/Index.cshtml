@@ -1,9 +1,27 @@
-﻿
-@{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+﻿@{
+	Layout = null;
 }
 
+<!DOCTYPE html>
+<html lang="en">
 
+@await Component.InvokeAsync("_HeadLayout")
 
+<body class="animsition">
 
+	@await Component.InvokeAsync("_HeaderLayout")
+
+	@await Component.InvokeAsync("_SliderLayout")
+
+	@await Component.InvokeAsync("_BannerLayout")
+
+	@await Component.InvokeAsync("_ProductLayout") 
+
+	@await Component.InvokeAsync("_FooterLayout")
+
+	@await Component.InvokeAsync("_ModalLayout")
+
+	@await Component.InvokeAsync("_ScriptLayout")
+
+</body>
+</html>

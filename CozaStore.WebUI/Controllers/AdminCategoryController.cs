@@ -2,7 +2,7 @@
 
 namespace CozaStore.WebUI.Controllers
 {
-	public class ProductController : Controller
+	public class AdminCategoryController : Controller
 	{
 		public IActionResult Index()
 		{

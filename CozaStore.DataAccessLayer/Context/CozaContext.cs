@@ -17,5 +17,7 @@ namespace CozaStore.DataAccessLayer.Context
 		public DbSet<Category> Categories { get; set; }
 		public DbSet<Product> Products { get; set; }
 		public DbSet<Feature> Features { get; set; }
+		public DbSet<About> Abouts { get; set; }
+		public DbSet<Contact> Contacts { get; set; }
 	}
 }

@@ -13,11 +13,11 @@ namespace CozaStore.WebUI.ViewComponents.Default
 		{
 			_httpClientFactory = httpClientFactory;
 		}
-		public async Task<IViewComponentResult> InvokeAsync()
+		public async Task<IViewComponentResult> InvokeAsync(int id)
 		{
 			var client = _httpClientFactory.CreateClient();
 
-			var responseMessage = await client.GetAsync("https://localhost:7043/api/Product");
+			var responseMessage = await client.GetAsync("https://localhost:7043/api/Product");			
 
 			if (responseMessage.IsSuccessStatusCode)
 			{
@@ -25,7 +25,9 @@ namespace CozaStore.WebUI.ViewComponents.Default
 				var values = JsonConvert.DeserializeObject<List<ResultProductDto>>(jsonData);
 				return View(values);
 			}
+			
 			return View();
 		}
+
 	}
 }

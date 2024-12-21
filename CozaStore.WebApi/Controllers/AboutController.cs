@@ -21,7 +21,7 @@ namespace CozaStore.WebApi.Controllers
 		[HttpGet]
 		public IActionResult AboutList()
 		{
-			var values = _aboutService.TGetAll();
+			var values = _aboutService.TGetAll().FirstOrDefault();
 			return Ok(values);
 		}
 
@@ -42,9 +42,14 @@ namespace CozaStore.WebApi.Controllers
 		}
 
 		[HttpPut]
-		public IActionResult UpdateAbout(UpdateAboutDto updateAboutDto)
+		public IActionResult UpdateAbout([FromBody] UpdateAboutDto updateAboutDto)
 		{
-			About about = new About();
+			var about = _aboutService.TGetAll().FirstOrDefault(); 
+
+			if (about == null)
+			{
+				return NotFound("Güncellenecek kayıt bulunamadı.");
+			}
 			about.AboutId = updateAboutDto.AboutId;
 			about.QuoteAuthor = updateAboutDto.QuoteAuthor;
 			about.QuoteDetail = updateAboutDto.QuoteDetail;
@@ -54,9 +59,10 @@ namespace CozaStore.WebApi.Controllers
 			about.CoverImage = updateAboutDto.CoverImage;
 			about.OurStoryDetail = updateAboutDto.OurStoryDetail;
 
-			_aboutService.TUpdate(about);
-			return Ok("Güncelleme Başarılı");
+			_aboutService.TUpdate(about); 
+			return Ok("Güncelleme başarılı.");
 		}
+
 
 		[HttpGet("GetAbout")]
 		public IActionResult GetAbout(int id)

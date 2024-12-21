@@ -1,0 +1,110 @@
+﻿@model IPagedList<CozaStore.WebUI.Dtos.ProductDtos.ResultProductDto>
+@using X.PagedList.Mvc.Core
+@using X.PagedList
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = (Model.PageNumber - 1) * Model.PageSize;
+}
+
+
+
+<div class="col-lg-12 d-flex align-items-stretch">
+    <div class="card w-100">
+        <div class="card-body p-4">
+            <h5 class="card-title fw-semibold mb-4">Ürünler</h5>
+            <div class="table-responsive">
+                <table class="table text-nowrap mb-0 align-middle">
+                    <thead class="text-dark fs-4">
+                        <tr>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0"></h6>
+                            </th>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0"></h6>
+                            </th>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">Ürün</h6>
+                            </th>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">Detay</h6>
+                            </th>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">Kategori</h6>
+                            </th>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">Düzenle</h6>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            count++;
+                            <tr>
+                                <td class="border-bottom-0"><h6 class="fw-semibold mb-0">@count</h6></td>
+                                <td class="border-bottom-0">
+                                    <img src="@item.ImageUrl" style="width:60px; height:60px; border-radius:50%; object-fit:cover;" />
+                                </td>
+                                <td class="border-bottom-0">
+                                    <p class="mb-0 fw-normal">@item.ProductName</p>
+                                </td>
+                                <td class="border-bottom-0">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <h6>@item.Detail.Substring(0,20)...</h6>
+                                    </div>
+                                </td>
+                                <td>@item.CategoryId</td>
+                                <td class="border-bottom-0">
+                                    <a href="/AdminProduct/DeleteProduct/@item.ProductId" class="btn btn-danger">Sil</a>
+                                    <a href="/AdminProduct/UpdateProduct/@item.ProductId" class="btn btn-warning">Güncelle</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <a href="/AdminProduct/CreateProduct" class="btn btn-primary">Yeni Ürün Ekle</a>
+            </div>
+        </div>
+       
+    </div>
+</div>
+
+<div class="pagination-container">   
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
+</div>
+
+<style>
+    .pagination-container .pagination {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+    }
+
+        .pagination-container .pagination li {
+            margin: 0 5px;
+        }
+
+    .pagination-container .pagination a {
+            text-decoration: none;
+            color: #007bff; /* Link rengi */
+            padding: 5px 10px;
+            border: 1px solid #ddd !important;
+            border-radius: 5px;
+            background-color: #fff !important;  /* Buton arka planını beyaz yapıyoruz */
+            transition: background-color 0.2s, color 0.2s; /* Renk geçişi ekliyoruz */
+        }
+
+            .pagination-container .pagination a:hover {
+                background-color: #007bff; /* Hover durumunda mavi arka plan */
+                color: #fff; /* Hover durumunda yazı rengi beyaz */
+            }
+
+        .pagination-container .pagination .active a {
+            background-color: #007bff !important; /* Aktif sayfa butonunun arka planı mavi */
+            color: #fff; /* Aktif sayfa butonunun yazı rengi beyaz */
+        }
+</style>
+

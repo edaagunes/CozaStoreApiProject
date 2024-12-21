@@ -1,0 +1,61 @@
+﻿@model UpdateProductDto
+@{
+    ViewData["Title"] = "UpdateProduct";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<form method="post" asp-action="UpdateProduct">
+    <input type="hidden" asp-for="ProductId"/>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Ürün Adı</h5>
+                    <input type="text" class="form-control" asp-for="ProductName" />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Ürün Açıklaması</h5>
+                    <input type="text" class="form-control" asp-for="Detail" />
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Ürün Fiyatı</h5>
+                    <input type="text" class="form-control" asp-for="Price" />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Görsel Url</h5>
+                    <input type="text" class="form-control" asp-for="ImageUrl" />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Ürün Kategorisi</h5>
+                    @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.v, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+        <button type="submit" class="btn btn-secondary m-1">Güncelle</button>
+        </div>
+    </div>
+    
+</form>
+
+

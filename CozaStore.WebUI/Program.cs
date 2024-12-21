@@ -1,8 +1,17 @@
+using CozaStore.DataAccessLayer.Context;
+using CozaStore.EntityLayer.Concrete;
+using CozaStore.WebUI.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient();
+
+builder.Services.AddDbContext<CozaContext>();
+
+builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<CozaContext>().AddErrorDescriber<CustomIdentityValidator>();
+
 
 var app = builder.Build();
 
@@ -19,6 +28,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

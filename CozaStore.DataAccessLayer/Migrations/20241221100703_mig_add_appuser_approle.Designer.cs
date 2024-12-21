@@ -4,6 +4,7 @@ using CozaStore.DataAccessLayer.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CozaStore.DataAccessLayer.Migrations
 {
     [DbContext(typeof(CozaContext))]
-    partial class CozaContextModelSnapshot : ModelSnapshot
+    [Migration("20241221100703_mig_add_appuser_approle")]
+    partial class mig_add_appuser_approle
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

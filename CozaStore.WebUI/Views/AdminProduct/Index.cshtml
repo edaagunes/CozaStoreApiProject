@@ -1,4 +1,4 @@
-﻿@model IPagedList<CozaStore.WebUI.Dtos.ProductDtos.ResultProductDto>
+﻿@model IPagedList<CozaStore.WebUI.Dtos.ProductDtos.ResultProductWithCategory>
 @using X.PagedList.Mvc.Core
 @using X.PagedList
 @{
@@ -6,8 +6,6 @@
     Layout = "~/Views/AdminLayout/Index.cshtml";
     int count = (Model.PageNumber - 1) * Model.PageSize;
 }
-
-
 
 <div class="col-lg-12 d-flex align-items-stretch">
     <div class="card w-100">
@@ -54,7 +52,7 @@
                                         <h6>@item.Detail.Substring(0,20)...</h6>
                                     </div>
                                 </td>
-                                <td>@item.CategoryId</td>
+                                <td>@item.CategoryName</td>
                                 <td class="border-bottom-0">
                                     <a href="/AdminProduct/DeleteProduct/@item.ProductId" class="btn btn-danger">Sil</a>
                                     <a href="/AdminProduct/UpdateProduct/@item.ProductId" class="btn btn-warning">Güncelle</a>

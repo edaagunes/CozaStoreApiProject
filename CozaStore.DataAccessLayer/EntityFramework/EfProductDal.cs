@@ -2,6 +2,7 @@
 using CozaStore.DataAccessLayer.Context;
 using CozaStore.DataAccessLayer.Repositories;
 using CozaStore.EntityLayer.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +16,7 @@ namespace CozaStore.DataAccessLayer.EntityFramework
 		public EfProductDal(CozaContext context) : base(context)
 		{
 		}
+
 	}
 }
+

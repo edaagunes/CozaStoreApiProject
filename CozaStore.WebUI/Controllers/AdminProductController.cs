@@ -20,12 +20,12 @@ namespace CozaStore.WebUI.Controllers
 		public async Task<IActionResult> Index(int page = 1)
 		{
 			var client = _httpClientFactory.CreateClient();
-			var responseMessage = await client.GetAsync("https://localhost:7043/api/Product");
+			var responseMessage = await client.GetAsync("https://localhost:7043/api/Product/ProductListWithCategory");
 
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				var jsonData = await responseMessage.Content.ReadAsStringAsync();
-				var values = JsonConvert.DeserializeObject<List<ResultProductDto>>(jsonData);
+				var values = JsonConvert.DeserializeObject<List<ResultProductWithCategory>>(jsonData);
 				var pagedValues = values.OrderBy(x=>x.ProductName).ToPagedList(page,6);
 				return View(pagedValues);
 			}

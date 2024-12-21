@@ -1,8 +1,11 @@
 ﻿using CozaStore.BusinessLayer.Abstract;
+using CozaStore.DataAccessLayer.Context;
 using CozaStore.DtoLayer.ProductDtos;
 using CozaStore.EntityLayer.Concrete;
+using CozaStore.WebApi.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace CozaStore.WebApi.Controllers
 {
@@ -22,6 +25,25 @@ namespace CozaStore.WebApi.Controllers
 		{
 			var values = _productService.TGetAll();
 			return Ok(values);
+		}
+
+		[HttpGet("ProductListWithCategory")]
+		public IActionResult ProductListWithCategory()
+		{
+			CozaContext context = new CozaContext();
+			var values = context.Products.Include(x => x.Category).Select(y => new ProductWithCategoryViewModel
+			{
+				ProductId = y.ProductId,
+				ProductName = y.ProductName,
+				Price = y.Price,
+				Detail = y.Detail,
+				ImageUrl = y.ImageUrl,
+				CategoryName = y.Category.CategoryName,
+				CategoryId = y.CategoryId
+			}).ToList();
+			
+			return Ok(values);
+
 		}
 
 		[HttpGet("GetProduct")]

@@ -1,4 +1,4 @@
-﻿@model List<ResultAboutDto>
+﻿@model ResultAboutDto
 @{
 	Layout = null;
 }
@@ -12,9 +12,9 @@
 
 	@await Component.InvokeAsync("_HeaderLayout")
 
-	@foreach (var item in Model)
-	{
-		<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('@item.CoverImage');">
+@* 	@foreach (var item in Model)
+	{ *@
+	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('@Model.CoverImage');">
 			<h2 class="ltext-105 cl0 txt-center">
 				Hakkımızda
 			</h2>
@@ -30,7 +30,7 @@
 							</h3>
 
 							<p class="stext-113 cl6 p-b-26">
-								@item.OurStoryDetail
+							@Model.OurStoryDetail
 
 							</p>
 						</div>
@@ -39,7 +39,7 @@
 					<div class="col-11 col-md-5 col-lg-4 m-lr-auto">
 						<div class="how-bor1 ">
 							<div class="hov-img0">
-								<img src="@item.Image1" alt="IMG">
+							<img src="@Model.Image1" alt="IMG">
 							</div>
 						</div>
 					</div>
@@ -53,16 +53,16 @@
 							</h3>
 
 							<p class="stext-113 cl6 p-b-26">
-								@item.OurMissionDetail
+							@Model.OurMissionDetail
 							</p>
 
 							<div class="bor16 p-l-29 p-b-9 m-t-22">
 								<p class="stext-114 cl6 p-r-40 p-b-11">
-									@item.QuoteDetail
+								@Model.QuoteDetail
 								</p>
 
 								<span class="stext-111 cl8">
-									@item.QuoteAuthor
+								@Model.QuoteAuthor
 								</span>
 							</div>
 						</div>
@@ -71,14 +71,14 @@
 					<div class="order-md-1 col-11 col-md-5 col-lg-4 m-lr-auto p-b-30">
 						<div class="how-bor2">
 							<div class="hov-img0">
-								<img src="@item.Image2" alt="IMG">
+								<img src="@Model.Image2" alt="IMG">
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-	}
+	@* } *@
 
 
 	@await Component.InvokeAsync("_FooterLayout")

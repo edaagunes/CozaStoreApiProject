@@ -15,5 +15,16 @@ namespace CozaStore.DataAccessLayer.EntityFramework
 		public EfContactDal(CozaContext context) : base(context)
 		{
 		}
+
+		public Contact LastMessage()
+		{
+			using (var context = new CozaContext())
+			{
+				var lastMessage = context.Contacts
+										 .OrderByDescending(p => p.ContactId)
+										 .FirstOrDefault();
+				return lastMessage;
+			}
+		}
 	}
 }

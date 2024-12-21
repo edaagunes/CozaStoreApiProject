@@ -15,5 +15,14 @@ namespace CozaStore.DataAccessLayer.EntityFramework
 		public EfCategoryDal(CozaContext context) : base(context)
 		{
 		}
+
+		public int CategoryCount()
+		{
+			using (var context=new CozaContext())
+			{
+				var values = context.Categories.Count();
+				return values;
+			}
+		}
 	}
 }

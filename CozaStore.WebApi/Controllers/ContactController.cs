@@ -62,5 +62,12 @@ namespace CozaStore.WebApi.Controllers
 			_contactService.TDelete(id);
 			return Ok("Silme Başarılı");
 		}
+
+		[HttpGet("LastMessage")]
+		public IActionResult LastMessage()
+		{
+			var value = _contactService.TLastMessage();
+			return Ok(value);
+		}
 	}
 }

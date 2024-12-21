@@ -9,5 +9,8 @@ namespace CozaStore.BusinessLayer.Abstract
 {
 	public interface IProductService : IGenericService<Product>
 	{
+		int TProductCount();
+		Product TGetLastProduct();
+		List<Product> TGetLast4Products();
 	}
 }

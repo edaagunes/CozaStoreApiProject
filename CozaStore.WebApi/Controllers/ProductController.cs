@@ -86,5 +86,23 @@ namespace CozaStore.WebApi.Controllers
 			_productService.TDelete(id);
 			return Ok("Silme Başarılı");
 		}
+		[HttpGet("ProductCount")]
+		public IActionResult ProductCount()
+		{
+			var value = _productService.TProductCount();
+			return Ok(value);
+		}
+		[HttpGet("LastProduct")]
+		public IActionResult LastProduct()
+		{
+			var value = _productService.TGetLastProduct();
+			return Ok(value);
+		}
+		[HttpGet("GetLast4Product")]
+		public IActionResult GetLast4Product()
+		{
+			var value = _productService.TGetLast4Products();
+			return Ok(value);
+		}
 	}
 }

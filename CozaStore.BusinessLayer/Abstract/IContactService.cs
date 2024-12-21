@@ -9,5 +9,6 @@ namespace CozaStore.BusinessLayer.Abstract
 {
 	public interface IContactService:IGenericService<Contact>
 	{
+		Contact TLastMessage();
 	}
 }

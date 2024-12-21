@@ -34,9 +34,24 @@ namespace CozaStore.BusinessLayer.Concrete
 			return _productDal.GetById(id);
 		}
 
+		public List<Product> TGetLast4Products()
+		{
+			return _productDal.GetLast4Products();
+		}
+
+		public Product TGetLastProduct()
+		{
+			return _productDal.GetLastProduct();
+		}
+
 		public void TInsert(Product entity)
 		{
 			_productDal.Insert(entity);
+		}
+
+		public int TProductCount()
+		{
+			return _productDal.ProductCount();
 		}
 
 		public void TUpdate(Product entity)

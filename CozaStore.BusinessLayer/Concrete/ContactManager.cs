@@ -38,6 +38,11 @@ namespace CozaStore.BusinessLayer.Concrete
 			_contactDal.Insert(entity);
 		}
 
+		public Contact TLastMessage()
+		{
+			return _contactDal.LastMessage();
+		}
+
 		public void TUpdate(Contact entity)
 		{
 			_contactDal.Update(entity);

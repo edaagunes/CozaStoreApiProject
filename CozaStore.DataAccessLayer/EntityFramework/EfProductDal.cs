@@ -17,6 +17,37 @@ namespace CozaStore.DataAccessLayer.EntityFramework
 		{
 		}
 
+		public List<Product> GetLast4Products()
+		{
+			using (var context = new CozaContext())
+			{
+				var last4Product = context.Products
+										 .OrderByDescending(p => p.ProductId)
+										 .Take(4).ToList();
+				return last4Product;
+			}
+		}
+
+		public Product GetLastProduct()
+		{
+			using (var context = new CozaContext())
+			{
+				var lastProduct = context.Products
+										 .OrderByDescending(p => p.ProductId) 
+										 .FirstOrDefault(); 
+				return lastProduct;
+			}
+		}
+
+
+		public int ProductCount()
+		{
+			using (var context=new CozaContext())
+			{
+				var values = context.Products.Count();
+				return values;
+			}
+		}
 	}
 }
 

@@ -9,5 +9,9 @@ namespace CozaStore.DataAccessLayer.Abstract
 {
 	public interface IProductDal : IGenericDal<Product>
 	{
+		int ProductCount();
+		Product GetLastProduct();
+
+		List<Product> GetLast4Products();
 	}
 }

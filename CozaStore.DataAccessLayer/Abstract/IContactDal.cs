@@ -9,5 +9,6 @@ namespace CozaStore.DataAccessLayer.Abstract
 {
 	public interface IContactDal:IGenericDal<Contact>
 	{
+		Contact LastMessage();
 	}
 }

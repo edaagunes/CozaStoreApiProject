@@ -83,5 +83,12 @@ namespace CozaStore.WebApi.Controllers
 			_categoryService.TDelete(id);
 			return Ok("Silme Başarılı");
 		}
+
+		[HttpGet("CategoryCount")]
+		public IActionResult CategoryCount()
+		{
+			var value = _categoryService.TCategoryCount();
+			return Ok(value);
+		}
 	}
 }

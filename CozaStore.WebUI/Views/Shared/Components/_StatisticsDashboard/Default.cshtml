@@ -1,0 +1,70 @@
+﻿<div class="row">
+	<!-- Sol Taraf -->
+	<div class="col-lg-6">
+		<div class="row">
+			<div class="col-lg-12">
+				<!-- Yearly Breakup -->
+				<div class="card overflow-hidden">
+					<div class="card-body p-4">
+						<h5 class="card-title mb-9 fw-semibold"> Kategori Sayısı</h5>
+						<div class="row align-items-center">
+							<h4 class="fw-semibold mb-3">@ViewBag.CategoryCount</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-12">
+				<!-- Yearly Breakup -->
+				<div class="card overflow-hidden">
+					<div class="card-body p-4">
+						<h5 class="card-title mb-9 fw-semibold">Son Eklenen Ürün</h5>
+						<div class="row align-items-center">
+							<div class="col-8">
+								<h4 class="fw-semibold mb-3">@ViewBag.LastProduct</h4>
+							</div>
+							<div class="col-4">
+								<div class="d-flex justify-content-center">
+									<img src="@ViewBag.LastProductImage" style="width:60px; height:60px; border-radius:50%; object-fit:cover;" />
+									<div id="breakup"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Sağ Taraf -->
+	<div class="col-lg-6">
+		<div class="row">
+			<div class="col-lg-12">
+				<!-- Monthly Earnings -->
+				<div class="card">
+					<div class="card-body  p-4">
+						<h5 class="card-title mb-9 fw-semibold"> Ürün Sayısı </h5>
+						<h4 class="fw-semibold mb-3">@ViewBag.ProductCount</h4>
+					</div>
+					<div id="earning"></div>
+				</div>
+			</div>
+			<div class="col-lg-12">
+				<!-- Monthly Earnings -->
+				<div class="card">
+					<div class="card-body p-4">
+						<h5 class="card-title mb-9 fw-semibold"> Son Gelen Mesaj </h5>
+						<div class="row align-items-start">
+							<div class="col-8">								
+								<h4 class="fs-4 mb-3"> @ViewBag.LastMessage.Substring(0, Math.Min(ViewBag.LastMessage.Length, 40))...</h4>
+								<div class="d-flex align-items-center pb-1">
+									<p class="fs-3 mb-0">@ViewBag.LastMessageMail</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="earning"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

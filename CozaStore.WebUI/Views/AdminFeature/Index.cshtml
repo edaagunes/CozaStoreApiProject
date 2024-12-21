@@ -1,0 +1,61 @@
+﻿@model List<ResultFeatureDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="col-lg-12 d-flex align-items-stretch">
+    <div class="card w-100">
+        <div class="card-body p-4">
+            <h5 class="card-title fw-semibold mb-4">Öne Çıkanlar</h5>
+            <div class="table-responsive">
+                <table class="table text-nowrap mb-0 align-middle">
+                    <thead class="text-dark fs-4">
+                        <tr>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0"></h6>
+                            </th>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0"></h6>
+                            </th>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">Başlık</h6>
+                            </th>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">Açıklama</h6>
+                            </th>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">Düzenle</h6>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="border-bottom-0"><h6 class="fw-semibold mb-0">@item.FeatureId</h6></td>
+                                <td class="border-bottom-0">
+                                    <img src="@item.ImageUrl" style="width:60px;height:60px;"/>
+                                </td>
+                                <td class="border-bottom-0">
+                                    <p class="mb-0 fw-normal">@item.Title</p>
+                                </td>
+                                <td class="border-bottom-0">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <h6><mark>@item.Head</mark></h6>
+                                    </div>
+                                </td>
+                                <td class="border-bottom-0">
+                                    <a href="/AdminFeature/DeleteFeature/@item.FeatureId" class="btn btn-danger">Sil</a>
+                                    <a href="/AdminFeature/UpdateFeature/@item.FeatureId" class="btn btn-warning">Güncelle</a>
+                                </td>
+                            </tr>
+                        }                      
+                    </tbody>
+                </table>
+                <a href="/AdminFeature/CreateFeature" class="btn btn-primary">Ekle</a>
+            </div>
+        </div>
+    </div>
+</div>
+

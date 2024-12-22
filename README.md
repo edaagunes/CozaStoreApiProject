@@ -4,7 +4,7 @@
 
 🌸 Bu projede, bir çiçek satış mağazası için dinamik bir web sitesi ve admin paneli tasarlanmıştır. Projenin tüm backend yapısı API'ler aracılığıyla geliştirilmiş ve frontend tarafında bu API'ler kullanılarak sistem işlevsel hale getirilmiştir. Kullanıcılar çiçekler hakkında detaylı bilgi alabilir, iletişim menüsünden adminlere mesaj gönderebilir ve adminler, site yönetimini kolayca gerçekleştirebilir.
 
-## 💐 [Web Site](##-web-site-1)
+## 💐 [Web Site](#-web-site-1)
 
 Kullanıcılar, web sitesi üzerinden çiçek buketleriyle ilgili bilgilere erişebilir.
 

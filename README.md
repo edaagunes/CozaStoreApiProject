@@ -54,7 +54,7 @@ Admin paneli üzerinden site üzerindeki tüm alanlar dinamik olarak güncellene
     <td>🔨 CodeFirst yaklaşımı uygulanmıştır.</td>
   </tr>
   <tr>
-    <td>🔒 Authentication ve Authorization işlemleri uygulandı.</td>
+    <td>🔒 Authentication işlemleri uygulandı.</td>
     <td>📝 Data Annotations kullanıldı.</td>
   </tr>
   <tr>
